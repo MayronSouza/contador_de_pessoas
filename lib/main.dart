@@ -13,6 +13,31 @@ void main() {
               fontWeight: FontWeight.bold,
             ),
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FlatButton(
+                child: Text(
+                  '+1',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 40.0,
+                  ),
+                ),
+                onPressed: () => print('Pressionou +1'),
+              ),
+              FlatButton(
+                child: Text(
+                  '-1',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 40.0,
+                  ),
+                ),
+                onPressed: () => print('Pressionou -1'),
+              ),
+            ],
+          ),
           Text(
             'Pode Entrar!',
             style: TextStyle(
