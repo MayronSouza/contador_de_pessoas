@@ -15,6 +15,15 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  int _people = 0;
+
+  void _changePeople(int delta) {
+    setState(() {
+    _people += delta;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -28,7 +37,7 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Contador 0',
+              'Contador $_people',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -47,7 +56,7 @@ class _HomeState extends State<Home> {
                         fontSize: 40.0,
                       ),
                     ),
-                    onPressed: () => print('Pressionou +1'),
+                    onPressed: () => _changePeople(1),
                   ),
                 ),
                 Padding(
@@ -60,9 +69,9 @@ class _HomeState extends State<Home> {
                         fontSize: 40.0,
                       ),
                     ),
-                    onPressed: () => print('Pressionou -1'),
+                    onPressed: () => _changePeople(-1),
                   ),
-                )
+                ),
               ],
             ),
             Text(
